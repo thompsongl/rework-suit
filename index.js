@@ -43,14 +43,14 @@ function suit(options) {
         root: options.root,
         shim: options.shim,
       }))
+      // inherits
+      .use(inherit())
       // check if the number of selectors exceeds the IE limit
       .use(limits)
       // custom media queries
       .use(customMedia)
       // variables
       .use(vars())
-      // inherits
-      .use(inherit())
       // calc
       .use(calc);
   };
