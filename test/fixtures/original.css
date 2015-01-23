@@ -47,3 +47,16 @@
 .TestCalc {
   width: calc(var(--width) * 2);
 }
+
+/**
+ * Test for inherit
+ */
+ 
+%inherit {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.Inherit {
+  inherit: %inherit;
+}

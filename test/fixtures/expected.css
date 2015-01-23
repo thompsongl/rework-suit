@@ -47,8 +47,6 @@
  * Test for variables
  */
 
-
-
 .TestVariables {
   border: 5px solid red;
   color: #069;
@@ -61,4 +59,13 @@
 
 .TestCalc {
   width: 200px;
+}
+
+/**
+ * Test for inherit
+ */
+
+.Inherit {
+  display: inline-block;
+  margin: 0 auto;
 }

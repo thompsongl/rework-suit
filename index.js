@@ -7,6 +7,7 @@
 var calc = require('rework-calc');
 var conformance = require('rework-suit-conformance');
 var customMedia = require('rework-custom-media');
+var inherit = require('rework-inherit');
 var inliner = require('rework-npm');
 var limits = require('rework-ie-limits');
 var rework = require('rework');
@@ -48,6 +49,8 @@ function suit(options) {
       .use(customMedia)
       // variables
       .use(vars())
+      // inherits
+      .use(inherit())
       // calc
       .use(calc);
   };
