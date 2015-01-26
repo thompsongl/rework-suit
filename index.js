@@ -10,6 +10,7 @@ var customMedia = require('rework-custom-media');
 var inherit = require('rework-inherit');
 var inliner = require('rework-npm');
 var limits = require('rework-ie-limits');
+var remFallback = require('rework-rem-fallback');
 var rework = require('rework');
 var vars = require('rework-vars');
 
@@ -30,6 +31,9 @@ function suit(options) {
   options = options || {};
   // for backwards compatibility with rework-npm < 1.0.0
   options.root = options.root || options.dir;
+  // base font-size for rem fallback
+
+  var remMultiplier = options.remMultiplier || 16;
 
   return function (ast, reworkObj) {
     reworkObj
@@ -52,6 +56,8 @@ function suit(options) {
       // variables
       .use(vars())
       // calc
-      .use(calc);
+      .use(calc)
+      // rem fallback
+      .use(remFallback(remMultiplier));
   };
 }
