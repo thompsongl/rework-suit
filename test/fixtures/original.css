@@ -60,3 +60,7 @@
 .Inherit {
   inherit: %inherit;
 }
+
+.Button {
+  background-color: color(var(--color) tint(10%));
+}

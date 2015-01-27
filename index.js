@@ -5,6 +5,7 @@
  */
 
 var calc = require('rework-calc');
+var color = require('rework-color-function');
 var conformance = require('rework-suit-conformance');
 var customMedia = require('rework-custom-media');
 var inherit = require('rework-inherit');
@@ -57,6 +58,8 @@ function suit(options) {
       .use(vars())
       // calc
       .use(calc)
+      // color functions
+      .use(color)
       // rem fallback
       .use(remFallback(remMultiplier));
   };

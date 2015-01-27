@@ -73,3 +73,7 @@
   display: inline-block;
   margin: 0 auto;
 }
+
+.Button {
+  background-color: rgb(25, 117, 163);
+}
