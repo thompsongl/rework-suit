@@ -13,6 +13,7 @@ var inliner = require('rework-npm');
 var limits = require('rework-ie-limits');
 var remFallback = require('rework-rem-fallback');
 var rework = require('rework');
+var reworkFunction = require('rework-plugin-function');
 var vars = require('rework-vars');
 
 /**
@@ -60,6 +61,14 @@ function suit(options) {
       .use(calc)
       // color functions
       .use(color)
+      // custom functions
+      .use(reworkFunction({
+        subtract: function(a, b) { return a - b },
+        multiply: function(a, b) { return a * b },
+        divide: function(a, b) { return a / b },
+        floor: Math.floor,
+        rem: function(a) { return (parseInt(a) / parseInt(remMultiplier)) + 'rem' }
+      }))
       // rem fallback
       .use(remFallback(remMultiplier));
   };
