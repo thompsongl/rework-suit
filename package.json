@@ -13,7 +13,7 @@
     "rework-custom-media": "~0.1.0",
     "rework-ie-limits": "~0.1.1",
     "rework-inherit": "^0.2.3",
-    "rework-npm": "git://github.com/thompsongl.rework-npm#thompsongl",
+    "rework-npm": "git://github.com/thompsongl/rework-npm#thompsongl",
     "rework-plugin-function": "^1.0.1",
     "rework-rem-fallback": "^1.0.0",
     "rework-suit-conformance": "~0.4.0",
