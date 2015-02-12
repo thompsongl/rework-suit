@@ -11,6 +11,7 @@ var customMedia = require('rework-custom-media');
 var inherit = require('rework-inherit');
 var inliner = require('rework-npm');
 var limits = require('rework-ie-limits');
+var namespace = require('rework-class-prefix');
 var remFallback = require('rework-rem-fallback');
 var rework = require('rework');
 var reworkFunction = require('rework-plugin-function');
@@ -36,6 +37,7 @@ function suit(options) {
   // base font-size for rem fallback
 
   var remMultiplier = options.remMultiplier || 16;
+  var ns = options.namespace || false;
 
   return function (ast, reworkObj) {
     reworkObj
@@ -71,5 +73,9 @@ function suit(options) {
       }))
       // rem fallback
       .use(remFallback(remMultiplier));
+    // Optional namespacing
+    if(ns){
+      reworkObj.use(namespace(ns.name, { not: ns.not }));
+    }
   };
 }
